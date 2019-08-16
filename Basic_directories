@@ -1,0 +1,16 @@
+Directory Architecture
+
+Directories inside the /
+/boot    -   (as name suggests, file under this directory are used for booting purpose)
+/home	-	(Contains home directory of normal users)
+/root	-	(Home directory user root)
+/etc	-	(All sort of configurations files are stored into this directory)
+/bin	-	(bin refers to binary files, binary files are executables similar to exe files in windows)
+/sbin	-	(Binary related with user root are stored into this directory, normal user cannot access the sensative commands in linux system)
+/dev	-	(In linux every thing is file, Files related with connected hardware devices in your system, are stored into this directory[Block special & character special files])
+/lib	-	(Contains Library files)
+/media	-	(Used to access CD & Pendrives)
+/mnt	-	(It is used for temporary mounting)
+/proc	-	(Live information about hardware i.e. RAM,CPU etc)
+/usr	-	(Usr is treated as program files folder in windows)
+/var	-	(Contains the information related to servers ie. web,ftp etc)

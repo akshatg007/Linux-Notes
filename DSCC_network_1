@@ -1,0 +1,23 @@
+Network
+5 Minutes for each task
+
+Task 1) - Check your existing ip address, gateway and DNS.
+Then change your existing Ip from 172.25.X.11 (X is your station number number) to new IP 172.25.X.XX+100 (x is your physical station number and xx is your virtual machine i.e. 10 or 11). Netmask is /24, Gateway is 172.25.X.254, DNS is 172.25.254.254. Check your changed output by command #ifconfig and check your Gateway by command #ip route  and DNS from file /etc/resolv.conf or by using command #nmcli con show "Connection_name"
+
+Try pinging your gateway server 172.25.x.254. Try pinging classroom server with hostname classroom.example.com
+Try pinging your neighbour with there IP address.
+
+Task 2) After completing task 1, change your IP address to new IP 192.168.0.X {x is your physical station number + 100 ) and then try pinging to your neighbours with there 192.168.0.X IP.
+
+Task 3) You have to run internet on your machine :-
+GATEWAY is 172.25.254.201
+DNS is 8.8.8.8
+Rest entries you have to find and mention them in appropriate file/GUI.   
+
+Task 4) To be done by Instructor - Instructor will delete your all three network files : 
+/etc/sysconfig/network-scripts/ifcfg-eth0, 
+/etc/sysconfig/network and 
+/etc/resolv.conf 
+
+Task 5) Now candidate will create network files and restore there default configuration as per lab network. Try pinging server with hostname #ping foundation0.ilt.example.com
+

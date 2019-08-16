@@ -1,0 +1,15 @@
+Step 1) Create a new partition of ext3 type(Hex code 83), size 800 MB and mount it permanently on /extdata.
+
+Step 2) Create a new partition of vfat type(Hex code c), size 500 MB and mount it persistently on /windata.
+
+Step 3) Create a another partition of xfs type, size 700 MB and mount it persistently on /xfsdata.
+
+Step 4) Create a another partition of ext4 type, size 900 MB and mount it persistently on /ext4data.
+
+SWAP PRACTICE
+--------------
+
+step 5) create an additional swap partition(Hex code 82) of 700 MB. Mount it permanently.
+
+Home work 
+1) How to create swap space using file. (Request to Instructor, Please do not help in this)

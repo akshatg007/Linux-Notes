@@ -1,0 +1,9 @@
+		Runlevels
+
+Runlevel 0 => Shutdown			=> #init 0
+Runlevel 1 => Single User Mode		=> #init 1
+Runlevel 2 => SUM With Network		=> #init 2
+Runlevel 3 => Multiuser Mode		=> #init 3
+Runlevel 4 => Unassigned		=> #init 4
+Runlevel 5 => MultiUser mode with GUI	=> #init 5
+Runlevel 6 => Reboot			=> #init 6

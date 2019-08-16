@@ -1,0 +1,38 @@
+Path
+
+#systemctl              {To list the status of all running services & targets}
+
+#systemctl --type=service       {List all individual services}
+#systemctl --type=target        {List all group of services i.e. target)
+
+#systemctl status sshd.service	{Display the current status of service and also shows permanent status of the service}
+
+#systemctl start service
+
+#systemctl restart service
+
+#systemctl stop service
+
+#systemctl is-active sshd               {List the current status}
+#systemctl is-enabled sshd              {Show you the bootup status of service}
+
+#systemctl enable sshd                  {sshd service is enabled at boot}
+#systemctl disable sshd                {sshd is disabled during boot}
+
+#systemctl get-default		{Used to check which runlevel/target is currently set 					as default}
+#systemctl set-default multiuser.target	{To change the default target}
+
+#systemctl isolate multi-user.target	{switch u to multiuser mode-runlevel 3}
+
+#systemctl isolate graphical.target	{switch to graphical mode-runlevel 5}
+
+#systemctl isolate rescue.target	{switch to rescue mode}
+
+#systemctl list-units --type=service	{show running & loaded services)
+
+#systemctl list-units --type=service --all {show all loaded and available services}
+
+#systemctl list-unit-files --type=service	{show the bootup status of services}
+
+#systemctl --failed --type=service
+

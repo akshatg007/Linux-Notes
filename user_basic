@@ -1,0 +1,2 @@
+Create 4 users in System named raka,sabu,billa and nagraj. Add raka user to machine and his default primary group is raka, raka can access the documents of sabu user. Add another user sabu to machine whos primary group is comics and his default directory is /sabu, also sabu can access the document of user raka with full permission. Add another user to machine name billa whos primary group is chachaji and secondary group is comics. Add another user nagraj who do not have login permission. all passwords are redhat.
+

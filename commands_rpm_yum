@@ -1,0 +1,103 @@
+Package Management 
+
+2 Methods :
+
+1) Manual =>  rpm / deb		{rpm's are used in Redhat based linux os like fedora & centos, whereas deb is used in Debian, Ubuntu, Mint etc}
+
+2) Automatic =>	yum / apt-get	{Yum method is used in redhat family os and apt-get(aptitude) is used in ubuntu, debian etc}
+
+Lets start with manual method.
+
+Change your directory to the directory containing packages ready for installation :
+
+#rpm -ivh package_full_name	{Command will install new package, -ivh option stands for install, verbose and hash printing}
+
+#rpm -Uvh package_full_name	{Command will upgrade any already installed package}
+
+#rpm -e package		{Command will erase the installed package from machine, here u just need to mention package name not full name including version and other things}
+
+For testing download the package named vsftpd & httpd from http://172.25.254.254/content/rhel7.0/x86_64/dvd/Packages/
+
+Using auto Install dependency option :-
+
+Installing forcefully without dependencies
+#rpm -ivh --nodeps package_full_name
+#rpm -ivh --nodeps --force package_full_name
+
+Practice :-
+
+1) Install vsftpd rpm from server
+2) Install httpd rpm from server in your machine
+
+
+RPM queries
+
+In this section we are querying with rpm's that how many files are installing when we are installing one package, on what locations those files bundled into rpm are installed in machine etc etc.
+
+#rpm -qa 	{List all installed packages on machine}
+#rpm -qa | grep vsftpd	{searching wheather vsftpd is installed or not}
+#rpm -q vsftpd		{Shows full name of package if installed}
+#rpm -qi vsftpd		{shows full information about package if installed}
+#rpm -qf /etc/fstab	{querying the name of package by which fstab file is installed in machine, this is usefull if already installed fstab stops working, then u need to reinstall it}
+#rpm -ql vsftpd		{List the name of files installed in your machine through vsftpd package}
+-------------------------------------------------------------------------
+Installing Packages Automatically thru yum   (Yum Client Side)
+
+Yum is used to point any repository(collection of packages) contains packages. In this method you need not to download package again and again from server. So we are creating a pointer file which will point the repository in server.
+
+Remove all files from directory /etc/yum.repos.d/   if not created by you.
+
+Now create new repo file in the above mentioned directory with xyz.repo file or whatever name you want but the extension must be .repo
+
+#vim server.repo
+[testrepo]
+name=RHEL6 Repository by chamanlal
+baseurl=http://content.example.com/rhel7.0/x86_64/dvd
+enabled=1
+gpgcheck=0
+
+
+#yum install vsftpd	{This will install vsftpd package from server's repository}
+#yum remove vsftpd -y	{This will remove vsftpd package from your machine}
+#yum update package	{This will update already installed package, similar to rpm -uvh}
+#yum info package	{Command will provide complete info of mentioned package}
+#yum search package	{Search the required package in repository, wheather it is available or not}
+#yum provides /etc/fstab	{Command will show the name of package by which fstab file is installed in machine}
+#yum list all		{Command will display the name of all installed pkg in machine and available packages to be installed on repository}
+#yum list installed	{Command will display all the installed packages}
+#yum list installed | grep vsftpd	{Command will filter vsftpd package out of all installed package}
+#yum list available		{Command will show the available packages to be installed on machine from server}
+#yum clean all		{Command is used to clear the cache of yum, very usefull if you stuck somewhere in installation}
+#yum update
+#yum grouplist		{Command will show the list of all bundled groups}
+#yum groupinstall "Desktop"	{Command will install whole Desktop group}
+#yum localinstall vsftpd	{Command will install vsftpd without using yum server, similar to rpm -ivh}	
+
+Yum Practice
+1) install vsftpd package using yum
+2) check wheather squid is installed in machine or not
+3) install the squid package, and see dependencies are automatically install.
+4) Try using yum localinstall 
+5) check the list of available groups
+6) remove httpd using yum
+--------------------------------------------------------------------------
+
+Yum Server side
+
+Yum Server is used to create the database of packages, which will available for yum clients to install various packages. You can create your own Yum server available for your local network and localhost.
+
+To create yum server you need to install createrepo package manually using rpm method from ftp server. Createrepo will ask for dependencies, install those packages first.
+
+#rpm -ivh createrepo
+#rpm -ivh *******dependency1
+#rpm -ivh *******dependency2
+
+Copy some packages from server in any specific directory like /var/ftp/packages/ using browser or nfs client mounting method.
+Now using createrepo command you have to create index of all available packages in /var/ftp/packages/ directory. 
+
+#createrepo -v /var/ftp/packages/
+
+Now point your repo to this newly created reposerver directory in your own machine. Just change the baseurl entry in xyz.repo file to baseurl=file:///var/ftp/packages/
+
+and try
+#yum install package

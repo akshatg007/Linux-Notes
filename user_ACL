@@ -1,0 +1,42 @@
+##########################	users , there permissions and ACL	###############################
+
+####################### ACL question ##########################################
+
+create five users tom , chamanlal , harry , naman , ojha ..
+user tom must be a mail user having comment " non interactive user" ..
+home directory of user harry will bhe /hariom ..
+home directory of user chamanlal will be /pencil ..
+primary group of user tom , chamanlal and harry will bhe disk ..
+groupid of group disk will be 7536 ..
+user naman must be able to access the home directory of user tom , chamanlal and harry with full permissions .. 
+uid of user ojha will be 6425 ..
+user ojha must not be able to access the home directory of user tom , chamanlal and harry ..
+user ojha can access the home directory of user naman with read permission ..
+password of all the users will be "redhat" ..
+no other user must be able to access the home directories of all the five users .. 
+
+#######################################################################################
+################### Challenge Question ##############################################
+create three users in ur machine named as ram, mohan, roy . 
+home directory of user ram will be /ram/mohan/redhat/roy .
+home directory of user mohan will be /ram/mohan .
+home directory of user roy will be /ram .
+uid of user ram will ne 1100 , user mohan will have the uid 2000 and user roy will have 3000. 
+user ram must be able to access all the file within the /ram directory with read write permissions ..
+/ram/mohan/redhat must be owned by root , group ownership of /ram/mohan/redhat will be root and /ram/mohan/redhat will have the permission 750 ..
+mohan must be able to access the home directory of user ram and roy with readonly permissions ..
+create another user susan as a mail user ..
+password of all the users will be redhat ..
+give "non interactive user" as the comment of user susan ..
+primary group of user ram will be japan .. 
+user mohan will also belong to the group japan ..
+gid of group japan will be 7568 ..
+
+         ______________________________________________________________________
+NOTE:-	|ram , mohan nd roy must be able to login from GUI without any error ..|
+	|______________________________________________________________________|
+
+
+
+
+

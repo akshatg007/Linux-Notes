@@ -1,0 +1,60 @@
+Vi is powerfull editor in linux used to edit file. 
+VIM is upgraded version of vi we use currently to edit files.
+
+#vim filename
+
+There are 3 modes in vim editor :
+
+1)Command Mode
+2)Insert Mode
+3)Exit Mode
+
+Command Mode :-
+
+This mode is used to run command in vim editor like copy, paste, search, delete, undo etc.
+Search in Vim -
+/<text>  - search the <text> downwards in file
+n  - continue search in same direction
+N  - continue search in opposite direction
+?<text> - search upwards in file
+n - continue search in same direction
+	---
+u  - used to undo the last change's
+	---
+        yank(copy) | cut (delete)
+        -------------------------
+word  - yw	   |  dw
+line  - yy	   |  dd
+5line - 5yy	   |  5dd
+25line- 25yy	   |  25dd
+
+	put (paste)        
+p - used to paste the data below cursor for line oriented data
+P - used to paste the data above cursor
+	---
+Insert Mode :-
+It is Used to enter or edit text and for cursor movement within file
+i - insert
+a - ?
+o - ?
+I - ?
+O - ?
+A - ?
+
+<Esc> is used to exit from insert mode to command mode
+
+	---
+Exit Mode :- 
+This mode is used to save and exit the file
+:q	- quit
+:wq	- write & quit
+:w	- write only
+:q!	- exit forcefully and abandon changes
+:wq!	- save & exit forcefully
+
+--------End of Topic----------------
+Class work after 2 times practice of vim editor :-
+1) Search how to remove the highlights on text we are serching in file.
+2) Insert the line number before every line
+3) open two files in vim editor at the same time using split window inside the vim editor and work on both of them.
+

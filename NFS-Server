@@ -1,0 +1,57 @@
+NFS SERVER
+port 2049
+Configuration file /etc/exports
+service nfs-server
+firewall 	nfs | 	mountd | 	rpc-bind
+
+    1  yum install nfs-utils
+    2  mkdir /tik-tok 
+    4  chmod 777 /tik-tok/
+    5  ls -ld /tik-tok/
+    6  vim /etc/exports
+	#share directory	ip address options
+	/tik-tok 	172.25.0.10/24(rw,sync)
+
+    7  mkdir /tik-tok/data
+   10  exportfs -arvf
+   12  systemctl restart nfs-server
+   13  systemctl enable nfs-server
+   14  firewall-cmd --permanent --add-service=nfs
+   15  firewall-cmd --permanent --add-service=mountd 
+   15  firewall-cmd --permanent --add-service=rpc-bind
+   16  firewall-cmd --reload
+=====================================================================
+NFS -CLIent
+
+yum install nfs-utils
+showmount -e 172.25.0.11   [show nfs server information]
+mkdir /nfs-client
+mount 172.25.0.11:/tik-tok 	/nfs-client
+mount
+df -Th
+===============================
+Permanent Mounting
+
+#vim /etc/fstab
+#device-name	     mount-point     filesystem 	options   backup file-system check
+172.25.0.11:/tik-tok    /mnt/nfs	nfs	defaults,_netdev	0	0
+:wq
+#mkdir /mnt/nfs
+#mount -a
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

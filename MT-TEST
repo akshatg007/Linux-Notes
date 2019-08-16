@@ -1,0 +1,84 @@
+ServerX Machine
+
+==================================================================================================================================================
+Questions 1 | USER'S GROUPS AND PERMISSION:
+
+Create a group named "sysadmin"  
+A user sarah and natasha should belongs to "manager" group as a  secondary group . A user harry should not have access to interactive shell and he should  not be a member of "manager" group. passwd for all user created should  be "password".
+==================================================================================================================================================
+Questions 2i | USER'S GROUPS AND PERMISSION:
+
+Add two groups to machine named bhopal & indore. Add two primary users to bhopal group named newmarket and city. Newmarket user can access the data of palasia user in rwx mode. Add two primary users to group indore named rnt & palasia. RNT can access the data of city user in read only. Palasia user can access the data of new market user with full permission. City user does'nt have interactive shell. Password of all user should be redhat.
+==================================================================================================================================================
+Questions 3 | CRON JOB:
+
+The  user sarah must configure a cron job that runs today at 14:23 and executes "/usr/bin/echo "hyer" and deny the max for creating  cronjob .
+==================================================================================================================================================
+Questions 4 | ACCESS CONTROL LIST: 
+#chown user filename [Change owner specific file]
+#chgrp group filename [Change group specific file]
+
+copy file /etc/fstab to /var/tmp and configure the "ACL" as mentioned :-
+
+The file /var/tmp/fstab is owned by the "root". The file /var/tmp/fstab belongs to the group "root". The file /var/tmp/fstab should not be executable by other's. User "sarah" should able to read and write to the file. User "natasha" can neither read nor write to the file. Other users (future and current) should be able to read /var/tmp/fstab.
+==================================================================================================================================================
+Questions 5 | ADD USERS:
+
+ Create the user "dax" with uid 4223.
+==================================================================================================================================================
+Questions 6 | EXTEND SWAP SPACE:
+
+Extend the SWAP space with "250" MB dont remove the existing swap.
+
+==================================================================================================================================================
+
+Questions 7 | Partition:
+
+Create a another partition of xfs type, size 700 MB and mount it persistently on /xfsdata
+
+==================================================================================================================================================
+Questions 8 | LOCATE THE FILES:
+
+ locate the files of owner "dax" and copy to the directory /root/found directory
+
+==================================================================================================================================================
+Questions 9 | SEARCH FOR WORD:
+
+List all lines which have string "full" from  "/usr/share/dict/words"  file and copy the lines in /root/word.found.
+
+==================================================================================================================================================
+Questions 10 | UMASK 
+
+Set default umask to 0077 for user natasha. Create the file named test in home dir of natasha user after login from user natasha and check the default permission of file created.
+==================================================================================================================================================
+Questions 11 | YUM 
+
+Create repo file
+yum Path - http://172.25.254.254/content/rhel7.0/x86_64/dvd/
+### /etc/yum.repos.d [yum client conf directory]
+==================================================================================================================================================
+
+Questions 12 | Package Management
+
+Install httpd 
+Install vsftpd
+==================================================================================================================================================
+Questions 13 | NFS Server:
+
+Export your "/nfs-server" directory via NFS to the 172.25.x.0/24 network  with read permission. 
+==================================================================================================================================================
+
+Questions 14 | SSH
+
+Setup passwordless SSH login serverx to desktopx
+==================================================================================================================================================
+
+Questions 15 | Systemd
+
+start and enabled httpd, vsftpd services
+your machine should be boot mult-user.target
+
+==================================================================================================================================================
+Questions 16 | REDIRECTION
+
+Redirect the output of your history to file /root/histout file.

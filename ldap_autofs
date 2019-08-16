@@ -1,0 +1,47 @@
+    1  cat /etc/passwd
+    2  getent passwd root
+    3  getent passwd student
+    4  getent passwd ldapuser0
+    5  cd
+    6  yum install authconfig-gtk krb5-workstation sssd
+    7  authconfig-gtk
+    8  getent passwd ldapuser0
+    9  cat /etc/passwd | less
+   10  getent passwd ldapuser12
+   11  getent passwd ldapuser15
+   12  getent passwd ldapuser20
+   13  getent passwd ldapuser21
+   14  getent passwd ldapuser50
+   15  getent passwd ldapuser51
+   16  su - ldapuser0
+   17  ssh ldapuser0@localhost
+   18  showmount -e classroom.example.com 
+   19  showmount -e classroom.example.com 
+   20  yum install autofs
+   21  ls /home/
+   22  vim /etc/auto.master
+   23  vim /etc/auto.guest
+   24  systemctl restart autofs
+   25  systemctl enable autofs
+   26  mount
+   27  ll /home/
+   28  cd /home/guests/
+   29  ll
+   30  cd
+   31  su - ldapuser0
+   32  mount
+   33  ll /home/guests/
+   34  su - ldapuser1
+   35  vim /etc/auto.guest
+   36  systemctl restart autofs
+   37  su - ldapuser1
+   38  vim /etc/auto.guest
+   39  systemctl restart autofs
+   40  su - ldapuser10
+   41  su - ldapuser15
+   42  su - ldapuser20
+   43  su - ldapuser50
+   44  ll /home/guests/
+   45  history 
+   46  history  >> ldap&autofs
+   47  history  >> ldap_autofs

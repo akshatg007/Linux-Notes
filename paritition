@@ -1,0 +1,25 @@
+fdisk -l 
+fdisk /dev/vdb
+n	create new partition
+
+w	wirte 
+
+partprobe 	[inform os ]
+
+fdisk -l 
++++++++++File SYstem ==============
+mkfs.ext4 /dev/vdb1
+mksfs.xfs  /dev/vdb2
+================MOunting File system (Access Point)
+mkdir /xfs
+mkdir /extdata
+
+________________MOunting ___________
+#command    device-name 	mount-point
+#mount /dev/vdb1  /xfs
+#mount /dev/vdb2  /extdata
+#mount
+df -Th
+____________umount     mount-point
+umount /xfs
+

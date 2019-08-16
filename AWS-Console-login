@@ -1,0 +1,29 @@
+
+Account login link = https://iteindia.signin.aws.amazon.com/console
+
+IAM user name = 8-11-batch
+
+Password = awsbhopal@123
+
+===================================================================================================
+
+Access Vm Cnsole
+
+1)  Download Putty from ftp://172.25.254.250/aws/putty-64bit-0.71-installer.msi (64 bit) or ftp://172.25.254.250/aws/putty-0.71-installer.msi (32 bit) 
+
+2) Open Putty 
+
+3) In the Category pane, choose Session and complete the following fields:
+
+   hostname or (ip address)
+
+   example  =  ec2-user@ec2-15-164-93-224.ap-northeast-2.compute.amazonaws.com
+   for more details login to ec2 dashboard, select runing instances, select the instance which you want to access, click the connect icon.
+
+4) Download the private key from here ftp://172.25.254.250/aws/Student.ppk
+
+5) In the Category pane, expand Connection, expand SSH, and then choose Auth. Complete the following:
+
+   Browse:  path of Private key
+
+6) click ok to connect the console.
